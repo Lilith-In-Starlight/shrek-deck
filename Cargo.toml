@@ -1,0 +1,12 @@
+[package]
+name = "shrek-deck"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dirs = "5.0.1"
+serde = { version = "1.0.207", features = ["derive"] }
+uuid = { version = "1.10.0", features = ["v4"] }
+
+[features]
+parser = []
