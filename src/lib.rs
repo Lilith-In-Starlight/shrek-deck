@@ -2,10 +2,12 @@
 #![warn(clippy::nursery)]
 // #[cfg(feature = "parser")]
 pub mod parser;
+#[cfg(feature = "tts")]
 pub mod tts;
 
 use serde::{Deserialize, Serialize};
 use std::fmt::Display;
+#[cfg(feature = "tts")]
 use tts::{CardShape, CustomDeckState};
 use uuid::Uuid;
 
@@ -72,6 +74,7 @@ pub trait GetCardInfo: Sized {
     /// The card shape
     /// # Errors
     /// Whenever you decide
+    #[cfg(feature = "tts")]
     fn get_card_shape(&self) -> Result<CardShape, CardError>;
     /// Turns a String into a card.
     /// # Errors
@@ -86,6 +89,7 @@ pub struct CardEntry<T: GetCardInfo + Clone> {
     pub amount: i64,
 }
 
+#[cfg(feature = "tts")]
 impl<T: GetCardInfo + Clone> CardEntry<T> {
     /// # Errors
     /// Whenever any of the `GetCardInfo` implementations in the supplied type error.
@@ -103,6 +107,7 @@ impl<T: GetCardInfo + Clone> CardEntry<T> {
     }
 }
 
+#[cfg(feature = "tts")]
 fn generate_guid() -> String {
     Uuid::new_v4().to_string()
 }
