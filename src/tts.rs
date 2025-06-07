@@ -364,7 +364,7 @@ pub fn get_saved_objects_dir() -> Option<PathBuf> {
 /// Gets the default saved objects directory for Tabletop Simulator. Implemented for Windows, Mac OS and Linux. The output value of this function is different depending on what OS it's been compiled for.
 #[cfg(target_os = "macos")]
 #[must_use]
-pub fn get_tts_dir() -> Option<PathBuf> {
+pub fn get_saved_objects_dir() -> Option<PathBuf> {
     let mut dir = dirs::home_dir();
     if let Some(dir) = dir.as_mut() {
         dir.push("Library/Tabletop Simulator/Saves/Saved Objects");
@@ -375,7 +375,7 @@ pub fn get_tts_dir() -> Option<PathBuf> {
 /// Gets the default saved objects directory for Tabletop Simulator. Implemented for Windows, Mac OS and Linux. The output value of this function is different depending on what OS it's been compiled for.
 #[cfg(target_os = "linux")]
 #[must_use]
-pub fn get_tts_dir() -> Option<PathBuf> {
+pub fn get_saved_objects_dir() -> Option<PathBuf> {
     let mut dir = dirs::home_dir();
     if let Some(dir) = dir.as_mut() {
         dir.push(".local/share/Tabletop Simulator/Saves/Saved Objects");
