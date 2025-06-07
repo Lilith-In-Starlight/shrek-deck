@@ -3,7 +3,7 @@ name = "shrek-deck"
 authors = ["Katie Ampersand <katie-and@ampersandia.net>"]
 description = "A crate for making TTS custom deck objects"
 license = "MIT"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 
 [dependencies]
