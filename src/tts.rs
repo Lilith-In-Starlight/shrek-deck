@@ -206,7 +206,7 @@ fn generate_deck_data<T: GetCardInfo + Clone>(
                 guid: generate_guid(),
                 name: "CardCustom".to_string(),
                 transform: TransformState::default(),
-                nickname: String::new(),
+                nickname: card.card.get_name().to_string(),
                 description: String::new(),
                 gm_notes: String::new(),
                 alt_look_angle: Vector3::default(),
